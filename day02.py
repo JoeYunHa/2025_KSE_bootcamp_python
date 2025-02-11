@@ -1,17 +1,18 @@
 import math
 
+def is_prime(num):
+    if num >= 2:
+        for i in range(2, int(math.sqrt(num))):
+            if num % i == 0:
+                return False
+        return True
+    else:
+        return False
+
 n = int(input("Input number : "))
-is_prime = True
 
-if n >= 2 :
-    for i in range(2, int(math.sqrt(n))):
-        if n % i == 0:
-            is_prime = False
-            break
-else:
-    is_prime = False
 
-if is_prime:
+if is_prime(n):
     print(f"{n} is prime number")
 else:
     print(f"{n} is NOT prime number!")
