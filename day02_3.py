@@ -6,3 +6,5 @@ artists[1] = 'D'
 print(artists)
 print(groups)
 # deep copy , name of array => pointer ?
+
+
