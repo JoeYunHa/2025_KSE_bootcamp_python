@@ -1,23 +1,31 @@
+first , second = input("Input two number a, b (a < b) : ").split()
 
-def is_prime(num) -> bool :
-    """
-    return True if it is a prime number and False if it is not a prime number
-    :param num: integer number
-    :return: boolean type
-    """
-    if num >= 2:
-        i = 2
-        while (i * i) <= num :
-            if num % i == 0:
-                return False
-            i += 1
-        return True
-    else:
-        return False
+a = int(first)
+b = int(second)
 
-n = int(input("Input number : "))
+if a > b:
+    a , b = b , a
 
-if is_prime(n):
-    print(f"{n} is prime number")
-else:
-    print(f"{n} is NOT prime number!")
+num = a
+
+while num <= b:
+   if num >= 2 :
+       is_prime = True
+       i = 2
+       while (i*i) <= num :
+           if num % i == 0:
+               is_prime = False
+               break
+           i += 1
+       if is_prime :
+           print(num , end = ' ')
+   num += 1
+
+
+
+
+
+
+
+
+
