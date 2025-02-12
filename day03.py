@@ -27,7 +27,7 @@ def my_power(base , expo) -> float :
     return result
 
 print(my_power(2,9))
-# if expo is float
+# if expo is not integer
 print(my_power(25,0.5))
 # if expo < 0
 print(my_power(10,-1))
