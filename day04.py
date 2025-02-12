@@ -15,25 +15,39 @@
 
 # dictionary
 # sugang = dict(python="kim", cpp="sung", db="kang")
-sugang = {'python': 'kim', 'cpp': 'sung', 'db' : 'kang'}
-print(sugang)
-sugang['datastructure'] = 'kim' # add
-print(sugang)
-sugang['datastructure'] = 'park' # update
-print(sugang)
-print(sugang['db'])
-# function get => search by key, return value
-# if not exists => return second parameter
-print(sugang.get('db'))
-print(sugang.get('opensource'))
-print(sugang.get('cpp','not exist'))
+# sugang = {'python': 'kim', 'cpp': 'sung', 'db' : 'kang'}
+# print(sugang)
+# sugang['datastructure'] = 'kim' # add
+# print(sugang)
+# sugang['datastructure'] = 'park' # update
+# print(sugang)
+# print(sugang['db'])
+# # function get => search by key, return value
+# # if not exists => return second parameter
+# print(sugang.get('db'))
+# print(sugang.get('opensource'))
+# print(sugang.get('cpp','not exist'))
+#
+# # items()
+# for i in sugang.items():
+#     print(i)
+#
+# for k in sugang.keys():
+#     print(k)
+#
+# for v in sugang.values():
+#     print(v)
 
-# items()
-for i in sugang.items():
-    print(i)
+import random
 
-for k in sugang.keys():
-    print(k)
+star = ['A', 'B', 'C']
+print(random.choice(star))
+print(random.randint(1,6))
+print(star[random.randint(0,2)])
 
-for v in sugang.values():
-    print(v)
+# dictionary comprehension
+squares = {n: pow(n,2) for n in range(10)}
+# squares = {n: n**2 for n in range(10)}
+# squares = {n: n*n for n in range(10)}
+print(squares)
+
