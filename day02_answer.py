@@ -1,3 +1,5 @@
+import math
+
 def my_power(base , expo) -> float :
     """
      A user-defined function that receives a base and exponent
@@ -7,8 +9,16 @@ def my_power(base , expo) -> float :
     :return: the power result in the form of a real number
     """
     result = 1
-    for k in range(expo):
+
+    integer_part = int(expo)
+    fraction_part = expo - integer_part
+
+    for _ in range(integer_part): # for k in range(expo)
         result *= base
+
+    if fraction_part > 0:
+        result *= math.exp(fraction_part * math.log(base))
+
     return result
 
 def is_prime(num) -> bool :
@@ -23,7 +33,7 @@ def is_prime(num) -> bool :
         while i < (int(my_power(num,0.5)) + 1):
             if num % i == 0:
                 return False
-            i += i
+            i += 1
     else:
         return False
     return True
