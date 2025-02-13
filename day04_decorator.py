@@ -1,6 +1,6 @@
 import time
 
-def description(f):
+def description_decorator(f):
     def wrapper(*args):
         print(f.__name__)
         print(f.__doc__)
@@ -20,7 +20,6 @@ def time_decorator(func):
     return wrapper
 
 @time_decorator
-@description
 def factorial_repetition(n) -> int:
     """
     factorial function by loop
@@ -33,7 +32,8 @@ def factorial_repetition(n) -> int:
     return result
 
 num = int(input())
+t = description_decorator(time_decorator(factorial_repetition))
 
-print(f"{num}! = {factorial_repetition(num)}")
+print(f"{num}! = {t(num)}")
 
 
