@@ -1,53 +1,30 @@
-# squares = list()
-# for i in range(1,6,1):
-#     squares.append(i*i)
-# print(squares)
+# SOLID
+# OCP -> 개방 폐쇄 원칙
+# Opened for 확장, Closed fir modification
+# annotation , decorator
 
-# list comprehension
-# com_squares = [i*i for i in range(1,6,1)]
-# print(com_squares)
-#
-# even_squares = [i*i for i in range(1,6,1) if i % 2 == 0]
-# print(even_squares)
-#
-# odd_squares = [i*i for i in range (1,6,1) if i % 2 != 0]
-# print(odd_squares)
+import time
 
-# dictionary
-# sugang = dict(python="kim", cpp="sung", db="kang")
-# sugang = {'python': 'kim', 'cpp': 'sung', 'db' : 'kang'}
-# print(sugang)
-# sugang['datastructure'] = 'kim' # add
-# print(sugang)
-# sugang['datastructure'] = 'park' # update
-# print(sugang)
-# print(sugang['db'])
-# # function get => search by key, return value
-# # if not exists => return second parameter
-# print(sugang.get('db'))
-# print(sugang.get('opensource'))
-# print(sugang.get('cpp','not exist'))
-#
-# # items()
-# for i in sugang.items():
-#     print(i)
-#
-# for k in sugang.keys():
-#     print(k)
-#
-# for v in sugang.values():
-#     print(v)
 
-import random
+def time_decorator(func): # closure
+    def wrapper(*arg):
+        s = time.time()
+        r = func(*arg)
+        e = time.time()
+        print(f"실행 시간 : {e - s : .4f} s")
+        return r
+    return wrapper
 
-star = ['A', 'B', 'C']
-print(random.choice(star))
-print(random.randint(1,6))
-print(star[random.randint(0,2)])
+# @time_decorator
+def factorial_repetition(n) -> int:
+    result = 1
+    for i in range(2,n + 1):
+        result *= i
+    return result
 
-# dictionary comprehension
-squares = {n: pow(n,2) for n in range(10)}
-# squares = {n: n**2 for n in range(10)}
-# squares = {n: n*n for n in range(10)}
-print(squares)
-
+number = int(input())
+ft = time_decorator(factorial_repetition)
+# s = time.time()
+print(f"{number}! = {ft(number)}")
+# e = time.time()
+# print(e - s)
