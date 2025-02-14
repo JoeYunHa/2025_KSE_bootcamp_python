@@ -1,11 +1,7 @@
-# class 간의 관계
-# is - a
-# inheritance
-# Association = composition, aggregation
-# part - of => composition
-# has - a => aggregation
+# module
 
-def my_abs(n)->int:
-    if n < 0:
-        return -n
-    return n
+
+import my_path.my_math
+
+print(my_path.my_math.my_abs(-99))
+print(my_path.my_math.my_fibonacci_loop(10))
