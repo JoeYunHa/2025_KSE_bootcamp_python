@@ -1,7 +1,8 @@
 # module
 
 
-import my_path.my_math
+import my_path.my_math as mm
 
-print(my_path.my_math.my_abs(-99))
-print(my_path.my_math.my_fibonacci_loop(10))
+if __name__ == "__main__":
+    print(mm.my_abs(-99))
+    print(mm.my_fibonacci_loop(6))
